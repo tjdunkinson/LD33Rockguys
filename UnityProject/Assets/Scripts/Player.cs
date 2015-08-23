@@ -1,12 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
-public class playerDetails : Player
+public class playerDetails
 {
 	public GameObject playerObject;
 	public bool gotPowerUp;
-
-	public TeamColour teamCol;
-
 }
 public class Player : MonoBehaviour {
 
@@ -15,15 +12,6 @@ public class Player : MonoBehaviour {
 	public GameObject ball;
 	public bool powerUp = false;
 	public GameObject puManager;
-
-	public enum TeamColour
-	{
-		Red,
-		Blue
-	};
-
-	public TeamColour team;
-	
 
 	Vector3 direction;
 	public float speed;
@@ -51,7 +39,6 @@ public class Player : MonoBehaviour {
 			var sendDets = new playerDetails();
 			sendDets.gotPowerUp = powerUp;
 			sendDets.playerObject = this.gameObject;
-			sendDets.teamCol = team;
 
 			ball.SendMessage("Grabbed", sendDets);
 			//ball.SendMessage("Grabbed", powerUp);
@@ -87,7 +74,7 @@ public class Player : MonoBehaviour {
 		if (puTimer > 0)
 		{
 			puTimer -= Time.deltaTime;
-			speed =  baseSpeed * 2;
+			speed =  baseSpeed * 3;
 		}
 		if (puTimer < 0)
 		{
@@ -114,6 +101,7 @@ public class Player : MonoBehaviour {
 		{
 			canGrab = false;
 			latched = false;
+			//ball.SendMessage("Ungrabbed", this.gameObject);
 		}
 	}
 
