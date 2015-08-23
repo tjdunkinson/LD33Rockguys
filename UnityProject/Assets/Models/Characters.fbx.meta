@@ -1,0 +1,395 @@
+fileFormatVersion: 2
+guid: 7be67e84056b61b4b82a39dcb3ff2ea1
+timeCreated: 1440343016
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: ArmL
+    100002: ArmL 1
+    100004: ArmR
+    100006: ArmR 1
+    100008: Body
+    100010: Body 1
+    100012: CharacterBlue
+    100014: CharacterRed
+    100016: //RootNode
+    100018: FootL
+    100020: FootL 1
+    100022: FootR
+    100024: FootR 1
+    100026: HandL
+    100028: HandL 1
+    100030: HandR
+    100032: HandR 1
+    100034: Head
+    100036: Head 1
+    100038: LegL
+    100040: LegL 1
+    100042: LegR
+    100044: LegR 1
+    400000: ArmL
+    400002: ArmL 1
+    400004: ArmR
+    400006: ArmR 1
+    400008: Body
+    400010: Body 1
+    400012: CharacterBlue
+    400014: CharacterRed
+    400016: //RootNode
+    400018: FootL
+    400020: FootL 1
+    400022: FootR
+    400024: FootR 1
+    400026: HandL
+    400028: HandL 1
+    400030: HandR
+    400032: HandR 1
+    400034: Head
+    400036: Head 1
+    400038: LegL
+    400040: LegL 1
+    400042: LegR
+    400044: LegR 1
+    2300000: ArmL
+    2300002: ArmL 1
+    2300004: ArmR
+    2300006: ArmR 1
+    2300008: Body
+    2300010: Body 1
+    2300012: FootL
+    2300014: FootL 1
+    2300016: FootR
+    2300018: FootR 1
+    2300020: HandL
+    2300022: HandL 1
+    2300024: HandR
+    2300026: HandR 1
+    2300028: Head
+    2300030: Head 1
+    2300032: LegL
+    2300034: LegL 1
+    2300036: LegR
+    2300038: LegR 1
+    3300000: ArmL
+    3300002: ArmL 1
+    3300004: ArmR
+    3300006: ArmR 1
+    3300008: Body
+    3300010: Body 1
+    3300012: FootL
+    3300014: FootL 1
+    3300016: FootR
+    3300018: FootR 1
+    3300020: HandL
+    3300022: HandL 1
+    3300024: HandR
+    3300026: HandR 1
+    3300028: Head
+    3300030: Head 1
+    3300032: LegL
+    3300034: LegL 1
+    3300036: LegR
+    3300038: LegR 1
+    4300000: Body
+    4300002: Head
+    4300004: ArmR
+    4300006: HandR
+    4300008: ArmL
+    4300010: HandL
+    4300012: LegR
+    4300014: FootR
+    4300016: LegL
+    4300018: FootL
+    4300020: Body
+    4300022: Head
+    4300024: ArmR
+    4300026: HandR
+    4300028: ArmL
+    4300030: HandL
+    4300032: LegR
+    4300034: FootR
+    4300036: LegL
+    4300038: FootL
+    7400000: Idle
+    7400002: Walk
+    7400004: Pull
+    9500000: //RootNode
+  materials:
+    importMaterials: 0
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 3
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Idle
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 119
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: CharacterBlue
+        weight: 1
+      - path: CharacterBlue/Body
+        weight: 1
+      - path: CharacterBlue/Body/ArmL
+        weight: 1
+      - path: CharacterBlue/Body/ArmL/HandL
+        weight: 1
+      - path: CharacterBlue/Body/ArmR
+        weight: 1
+      - path: CharacterBlue/Body/ArmR/HandR
+        weight: 1
+      - path: CharacterBlue/Body/Head
+        weight: 1
+      - path: CharacterBlue/LegL
+        weight: 1
+      - path: CharacterBlue/LegL/FootL
+        weight: 1
+      - path: CharacterBlue/LegR
+        weight: 1
+      - path: CharacterBlue/LegR/FootR
+        weight: 1
+      - path: CharacterRed
+        weight: 1
+      - path: CharacterRed/Body 1
+        weight: 1
+      - path: CharacterRed/Body 1/ArmL 1
+        weight: 1
+      - path: CharacterRed/Body 1/ArmL 1/HandL 1
+        weight: 1
+      - path: CharacterRed/Body 1/ArmR 1
+        weight: 1
+      - path: CharacterRed/Body 1/ArmR 1/HandR 1
+        weight: 1
+      - path: CharacterRed/Body 1/Head 1
+        weight: 1
+      - path: CharacterRed/LegL 1
+        weight: 1
+      - path: CharacterRed/LegL 1/FootL 1
+        weight: 1
+      - path: CharacterRed/LegR 1
+        weight: 1
+      - path: CharacterRed/LegR 1/FootR 1
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Walk
+      takeName: Take 001
+      firstFrame: 140
+      lastFrame: 219
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: CharacterBlue
+        weight: 1
+      - path: CharacterBlue/Body
+        weight: 1
+      - path: CharacterBlue/Body/ArmL
+        weight: 1
+      - path: CharacterBlue/Body/ArmL/HandL
+        weight: 1
+      - path: CharacterBlue/Body/ArmR
+        weight: 1
+      - path: CharacterBlue/Body/ArmR/HandR
+        weight: 1
+      - path: CharacterBlue/Body/Head
+        weight: 1
+      - path: CharacterBlue/LegL
+        weight: 1
+      - path: CharacterBlue/LegL/FootL
+        weight: 1
+      - path: CharacterBlue/LegR
+        weight: 1
+      - path: CharacterBlue/LegR/FootR
+        weight: 1
+      - path: CharacterRed
+        weight: 1
+      - path: CharacterRed/Body 1
+        weight: 1
+      - path: CharacterRed/Body 1/ArmL 1
+        weight: 1
+      - path: CharacterRed/Body 1/ArmL 1/HandL 1
+        weight: 1
+      - path: CharacterRed/Body 1/ArmR 1
+        weight: 1
+      - path: CharacterRed/Body 1/ArmR 1/HandR 1
+        weight: 1
+      - path: CharacterRed/Body 1/Head 1
+        weight: 1
+      - path: CharacterRed/LegL 1
+        weight: 1
+      - path: CharacterRed/LegL 1/FootL 1
+        weight: 1
+      - path: CharacterRed/LegR 1
+        weight: 1
+      - path: CharacterRed/LegR 1/FootR 1
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Pull
+      takeName: Take 001
+      firstFrame: 280
+      lastFrame: 359
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: CharacterBlue
+        weight: 1
+      - path: CharacterBlue/Body
+        weight: 1
+      - path: CharacterBlue/Body/ArmL
+        weight: 1
+      - path: CharacterBlue/Body/ArmL/HandL
+        weight: 1
+      - path: CharacterBlue/Body/ArmR
+        weight: 1
+      - path: CharacterBlue/Body/ArmR/HandR
+        weight: 1
+      - path: CharacterBlue/Body/Head
+        weight: 1
+      - path: CharacterBlue/LegL
+        weight: 1
+      - path: CharacterBlue/LegL/FootL
+        weight: 1
+      - path: CharacterBlue/LegR
+        weight: 1
+      - path: CharacterBlue/LegR/FootR
+        weight: 1
+      - path: CharacterRed
+        weight: 1
+      - path: CharacterRed/Body 1
+        weight: 1
+      - path: CharacterRed/Body 1/ArmL 1
+        weight: 1
+      - path: CharacterRed/Body 1/ArmL 1/HandL 1
+        weight: 1
+      - path: CharacterRed/Body 1/ArmR 1
+        weight: 1
+      - path: CharacterRed/Body 1/ArmR 1/HandR 1
+        weight: 1
+      - path: CharacterRed/Body 1/Head 1
+        weight: 1
+      - path: CharacterRed/LegL 1
+        weight: 1
+      - path: CharacterRed/LegL 1/FootL 1
+        weight: 1
+      - path: CharacterRed/LegR 1
+        weight: 1
+      - path: CharacterRed/LegR 1/FootR 1
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 50
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
