@@ -1,17 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
-public class playerDetails
+public class playerDetails : Player
 {
 	public GameObject playerObject;
 	public bool gotPowerUp;
-	public enum TeamCol
-	{
-		Red,
-		Blue
-	};
 
-	public TeamCol teamCol;
-
+	public TeamColour teamCol;
 
 }
 public class Player : MonoBehaviour {
