@@ -13,6 +13,7 @@ public class Player : MonoBehaviour {
 	public bool powerUp = false;
 	public GameObject puManager;
 
+	public GameObject body;
 	Vector3 direction;
 	public float speed;
 	bool canGrab;
@@ -62,10 +63,13 @@ public class Player : MonoBehaviour {
 		if (latched)
 		{
 			direction = new Vector3(Input.GetAxis("Xaxis"+playerNum),0,0);
+			body.transform.LookAt (ball.transform, Vector3.back);
 		}
 		else
 		{
+
 			direction = new Vector3(Input.GetAxis("Xaxis"+playerNum),Input.GetAxis("Yaxis"+playerNum),0);
+			body.transform.rotation = Quaternion.LookRotation(direction, Vector3.back);
 			
 			//print ("freedom");
 			speed = baseSpeed;
