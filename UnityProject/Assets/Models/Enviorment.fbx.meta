@@ -8,15 +8,22 @@ ModelImporter:
     100000: CartGeo
     100002: Crystals
     100004: //RootNode
+    100006: Cart
+    100008: Track
     400000: CartGeo
     400002: Crystals
     400004: //RootNode
+    400006: Cart
+    400008: Track
     2300000: CartGeo
     2300002: Crystals
+    2300004: Track
     3300000: CartGeo
     3300002: Crystals
+    3300004: Track
     4300000: Crystals
     4300002: CartGeo
+    4300004: Track
     9500000: //RootNode
   materials:
     importMaterials: 0
