@@ -13,13 +13,13 @@ public class Player : MonoBehaviour {
 	public bool powerUp = false;
 	public GameObject puManager;
 
-	public GameObject body;
+
 	Vector3 direction;
 	public float speed;
 	bool canGrab;
 	bool latched = false;
 	float puTimer;
-	
+	Animator anim;
 
 	CharacterController cont;
 	// Use this for initialization
@@ -28,6 +28,7 @@ public class Player : MonoBehaviour {
 
 		cont = GetComponent<CharacterController> ();
 		speed = baseSpeed;
+		anim = GetComponentInChildren<Animator> ();
 
 	}
 	
@@ -58,22 +59,35 @@ public class Player : MonoBehaviour {
 			
 			cont.Move((direction * speed) * Time.deltaTime);
 		}
+	
 
 
 		if (latched)
 		{
 			direction = new Vector3(Input.GetAxis("Xaxis"+playerNum),0,0);
-			body.transform.LookAt (ball.transform, Vector3.back);
+			transform.LookAt (ball.transform, Vector3.back);
+
+			anim.SetBool("Pulling", true);
+			anim.SetBool("Walking", true);
 		}
 		else
 		{
 
 			direction = new Vector3(Input.GetAxis("Xaxis"+playerNum),Input.GetAxis("Yaxis"+playerNum),0);
-			body.transform.rotation = Quaternion.LookRotation(direction, Vector3.back);
-			
-			//print ("freedom");
+			transform.rotation = Quaternion.LookRotation(direction, Vector3.back);
 			speed = baseSpeed;
+
+			anim.SetBool("Walking", true);
+			anim.SetBool("Pulling", false);
 		}
+		if (direction.normalized == Vector3.zero)
+		{
+			transform.LookAt (ball.transform, Vector3.back);
+
+			anim.SetBool("Walking", false);
+			anim.SetBool("Pulling", false);
+		}
+		
 
 		if (puTimer > 0)
 		{
