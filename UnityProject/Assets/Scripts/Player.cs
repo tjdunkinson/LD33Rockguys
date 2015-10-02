@@ -1,27 +1,29 @@
 ﻿using UnityEngine;
 using System.Collections;
-public class playerDetails
+public class kickInstruction
 {
-	public GameObject playerObject;
-	public bool gotPowerUp;
+	public Vector3 kickDir;
+	public float kickPow;
 }
 public class Player : MonoBehaviour {
 
 	public float playerNum;
 	public float baseSpeed;
 	public GameObject ball;
-	public bool powerUp = false;
-	public GameObject puManager;
-
-
 	Vector3 direction;
 	public float speed;
-	bool canGrab;
-	bool latched = false;
-	float puTimer;
-	Animator anim;
+	public float kickRange;
+	public float chargeTime;
+	public float maxKickPower;
 
+	Animator anim;
 	CharacterController cont;
+
+	public float kickPower;
+
+
+	//bool canGrab;
+
 	// Use this for initialization
 	void Start () 
 	{
@@ -36,21 +38,35 @@ public class Player : MonoBehaviour {
 	void Update () 
 	{
 
-		if (Input.GetButtonDown("GrabButton"+playerNum) && canGrab)
+		if (Input.GetButtonDown("Kick"+playerNum))
 		{
-			var sendDets = new playerDetails();
-			sendDets.gotPowerUp = powerUp;
-			sendDets.playerObject = this.gameObject;
-
-			ball.SendMessage("Grabbed", sendDets);
-			//ball.SendMessage("Grabbed", powerUp);
-			latched = true;
-
+			kickPower = 0f;
+			
+			
 		}
-		if (Input.GetButtonUp("GrabButton"+playerNum) && latched)
+		if (Input.GetButton("Kick"+playerNum))
 		{
-			ball.SendMessage("Ungrabbed", this.gameObject);
-			latched = false;
+			kickPower = Mathf.Lerp (0f, maxKickPower, Time.time * chargeTime);
+			
+			
+		}
+		if (Input.GetButtonUp("Kick"+playerNum))
+		{
+			float dist = Vector3.Distance(transform.position, ball.transform.position);
+			if (dist < kickRange)
+			{
+				var sendDets = new kickInstruction();
+				sendDets.kickDir = Vector3.zero; //put kick vector here
+				sendDets.kickPow = kickPower; //put kick pwoer here
+				
+				ball.SendMessage("Kicked", sendDets);
+
+				kickPower = 0f;
+
+			}
+
+			/*ball.SendMessage("Ungrabbed", this.gameObject);
+			latched = false;*/
 		}
 
 		if (Input.GetAxis("Xaxis"+playerNum) != 0 || Input.GetAxis("Yaxis"+playerNum) != 0)
@@ -62,24 +78,24 @@ public class Player : MonoBehaviour {
 	
 
 
-		if (latched)
+		/*if (latched)
 		{
 			direction = new Vector3(Input.GetAxis("Xaxis"+playerNum),0,0);
 			transform.LookAt (ball.transform, Vector3.back);
 
 			anim.SetBool("Pulling", true);
 			anim.SetBool("Walking", true);
-		}
-		else
-		{
+		}*/
+		//else
+		//{
 
 			direction = new Vector3(Input.GetAxis("Xaxis"+playerNum),Input.GetAxis("Yaxis"+playerNum),0);
 			transform.rotation = Quaternion.LookRotation(direction, Vector3.back);
 			speed = baseSpeed;
 
 			anim.SetBool("Walking", true);
-			anim.SetBool("Pulling", false);
-		}
+			//anim.SetBool("Pulling", false);
+		//}
 		if (direction.normalized == Vector3.zero)
 		{
 			transform.LookAt (ball.transform, Vector3.back);
@@ -89,7 +105,7 @@ public class Player : MonoBehaviour {
 		}
 		
 
-		if (puTimer > 0)
+		/*if (puTimer > 0)
 		{
 			puTimer -= Time.deltaTime;
 			speed =  baseSpeed * 3;
@@ -97,49 +113,11 @@ public class Player : MonoBehaviour {
 		if (puTimer < 0)
 		{
 			DeactivatePower();
-		}
+		}*/
 
 	}
 
-	void OnTriggerEnter (Collider col)
-	{
-		if (col.tag == "Ball") 
-		{
-			canGrab = true;
-		}
-		if (col.tag == "PowerUp")
-		{
-			ActivatePower(col.gameObject);
-		}
 
-	}
-	void OnTriggerExit (Collider col)
-	{
-		if (col.tag == "Ball") 
-		{
-			canGrab = false;
-			latched = false;
-			//ball.SendMessage("Ungrabbed", this.gameObject);
-		}
-	}
-
-	void ModifySpeed (float newSpeed)
-	{
-		speed = baseSpeed / newSpeed;
-	}
-
-	void ActivatePower (GameObject puObject)
-	{
-		powerUp = true;
-		puManager.SendMessage("Collected");
-		puTimer = 5f;
-		Destroy (puObject, 0.2f);
-	}
-	void DeactivatePower ()
-	{
-		powerUp = false;
-		speed = baseSpeed;
-	}
 }
 
 
